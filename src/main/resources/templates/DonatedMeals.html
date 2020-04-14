@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title> Feedpons | Meals Inventory </title>
+    <link href="/css/site.css" th:href="@{/site.css}" rel="stylesheet" type="text/css"/>
+</head>
+
+
+<body>
+
+<table>
+    <tr>
+        <th>Restaurant Name</th>
+        <th>Restaurant Id</th>
+        <th>Token Value</th>
+        <th>Purchase Date</th>
+        <th>Expiration Date</th>
+    </tr>
+
+    <tr th:each="meal:${meals}">
+        <th th:text="${meal.RESTAURANT_NAME}"></th>
+        <th th:text="${meal.RESTAURANT_ID}"></th>
+        <th th:text="${meal.TOKEN_VALUE}"> </th>
+        <th th:text="${meal.PURCHASE_DATE}"></th>
+        <th th:text="${meal.EXPIRATION_DATE}"></th>
+    </tr>
+
+
+</table>
+
+</body>
+</html>
