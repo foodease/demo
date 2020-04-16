@@ -21,10 +21,22 @@ public class MealServices {
     }
 
 
-    public List<Meal> getAllMeals(){
+    public List<Meal> getAllMeals() {
         List<Meal> meals = new ArrayList<>();
         this.mealRepository.findAll().forEach(meals::add);
         return meals;
+    }
+
+    public List<Meal> findByRESTAURANT_NAME(String restName) {
+        List<Meal> mealsToServe = new ArrayList<>();
+        this.mealRepository.findAll().forEach(mealsToServe::add);
+        for (Meal meal :
+                mealsToServe) {
+            if (meal.getRESTAURANT_NAME() != "CHI CHIS") {
+                mealsToServe.remove(this);
+            }
+        }
+        return mealsToServe;
     }
 
 

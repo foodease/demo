@@ -20,7 +20,7 @@
         <th>Attempts Remaining</th>
     </tr>
 
-    <tr th:each="meal:${meals}">
+    <tr th:each="meal:${meals.?[RESTAURANT_NAME == 'CHI CHIS']}">
         <th th:text="${meal.RESTAURANT_NAME}"></th>
         <th th:text="${meal.RESTAURANT_ID}"></th>
         <th th:text="${meal.TOKEN_VALUE}"></th>

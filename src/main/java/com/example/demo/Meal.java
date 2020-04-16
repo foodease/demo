@@ -13,7 +13,7 @@ public class Meal {
     private long MEAL_ID;
     @Column(name = "RESTAURANT_NAME")
     private String RESTAURANT_NAME;
-    @Column(name = "RESTAURANT_ID" )
+    @Column(name = "RESTAURANT_ID")
     private String RESTAURANT_ID;
     @Column(name = "TOKEN_VALUE")
     private int TOKEN_VALUE;
@@ -21,13 +21,20 @@ public class Meal {
     private Date PURCHASE_DATE;
     @Column(name = "EXPIRATION_DATE")
     private Date EXPIRATION_DATE;
+    @Column(name = "MEAL_DESCRIPTION")
+    private String MEAL_DESCRIPTION;
+    @Column(name = "TTL")
+    private int TTL;
 
     public Meal() {
+
         super();
     }
 
 
-    public Meal(long id, String restaurantName, String restaurantID, int tokenValue, Date purchaseDate, Date expirationDate) {
+    public Meal(long id, String restaurantName, String restaurantID,
+                int tokenValue, Date purchaseDate,
+                Date expirationDate, String MealDescription, int ttl) {
         super();
         this.MEAL_ID = id;
         this.RESTAURANT_NAME = restaurantName;
@@ -35,6 +42,8 @@ public class Meal {
         this.TOKEN_VALUE = tokenValue;
         this.PURCHASE_DATE = purchaseDate;
         this.EXPIRATION_DATE = expirationDate;
+        this.MEAL_DESCRIPTION = MealDescription;
+        this.TTL = ttl;
     }
 
     public long getMEAL_ID() {
@@ -83,5 +92,21 @@ public class Meal {
 
     public void setEXPIRATION_DATE(Date EXPIRATION_DATE) {
         this.EXPIRATION_DATE = EXPIRATION_DATE;
+    }
+
+    public String getMEAL_DESCRIPTION() {
+        return MEAL_DESCRIPTION;
+    }
+
+    public void setMEAL_DESCRIPTION(String MEAL_DESCRIPTION) {
+        this.MEAL_DESCRIPTION = MEAL_DESCRIPTION;
+    }
+
+    public int getTTL() {
+        return TTL;
+    }
+
+    public void setTTL(int TTL) {
+        this.TTL = TTL;
     }
 }
